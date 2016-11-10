@@ -19,18 +19,23 @@
 }
 
 #apps.metro.flex-container{
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
+
     display: flex;
-    -webkit-flex-flow: column wrap;
-    justify-content: space-around;
-    max-height: 90%;
-    max-width: 90%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 750px;
+    // padding: 0;
+    // margin: 0;
+    // list-style: none;
+    // display: -webkit-box;
+    // display: -moz-box;
+    // display: -ms-flexbox;
+    // display: -webkit-flex;
+    // display: flex;
+    // -webkit-flex-flow: column wrap;
+    // justify-content: space-around;
+    // max-height: 90%;
+    // max-width: 90%;
 }
 
 #apps.metro.flex-container .flex-item{
