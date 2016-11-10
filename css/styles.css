@@ -1,1 +1,170 @@
-//Styles goes here
+#main ul { list-style: none; }
+#main .buttons { margin-bottom: 20px; }
+
+#apps.list li { width: 100%; border-bottom: 1px dotted #CCC; margin-bottom: 10px; padding-bottom: 10px;transition: all 0.5s ease-out; }
+
+#apps.list.flex-container{
+    padding: 0px;
+    margin: 0px;
+}
+
+#apps.list.flex-container .flex-item{
+    background: tomato;
+    padding: 5px 5px 5px 20px;
+    transition: all 0.5s ease-out;
+}
+
+#main{
+    padding: 0px;
+}
+
+#apps.metro.flex-container{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: column wrap;
+    justify-content: space-around;
+    max-height: 90%;
+    max-width: 90%;
+}
+
+#apps.metro.flex-container .flex-item{
+     background: tomato;
+    margin: 5px;
+    width: 100px;
+    height: 100px;
+    /* margin-top: 10px; */
+    /* line-height: 150px; */
+    color: white;
+    font-weight: bold;
+    font-size: 0.5em;
+    text-align: center;
+    flex-flow: column;
+    border-radius: 4px;
+    transition: all 0.5s ease-out;
+}
+
+#apps.grid.flex-container {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    justify-content: flex-start;
+}
+
+#apps.grid.flex-container .flex-item {
+    background: tomato;
+    margin: 5px;
+    width: 100px;
+    height: 100px;
+    color: white;
+    font-weight: bold;
+    font-size: 0.5em;
+    text-align: center;
+    border-radius: 4px;
+    transition: all 0.5s ease-out;
+}
+
+/***** CSS for Side bar *******/
+/* The side navigation menu */
+.sidebar {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    color: white;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidebar button {
+    padding: 8px;
+    font-size: 11px;
+    background-color: grey;
+    display: block;
+    transition: 0.3s;
+    margin-bottom: 10px;
+    border-radius: 2px;
+    min-width: 55px;
+    margin: 0 auto;
+}
+.sidebar label{
+    margin: 0px 20px 5px 20px;
+    display: block;
+    min-width: 60px;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar button:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+}
+
+/**************** CSS For SideBar Buttons **************/
+
+.sidebar button{
+  text-decoration: none;
+  background: #424242;
+  background-image: -webkit-linear-gradient(top, #424242, #919191);
+  background-image: -moz-linear-gradient(top, #424242, #919191);
+  background-image: -ms-linear-gradient(top, #424242, #919191);
+  background-image: -o-linear-gradient(top, #424242, #919191);
+  background-image: linear-gradient(to bottom, #424242, #919191);
+  color: #fff;
+  margin-bottom: 3px;
+  border: 0px;
+}
+.sidebar button.active {
+  background: #0665b8;
+  background-image: -webkit-linear-gradient(top, #0665b8, #47b8ff);
+  background-image: -moz-linear-gradient(top, #0665b8, #47b8ff);
+  background-image: -ms-linear-gradient(top, #0665b8, #47b8ff);
+  background-image: -o-linear-gradient(top, #0665b8, #47b8ff);
+  background-image: linear-gradient(to bottom, #0665b8, #47b8ff);
+}
+
+.sidebar button:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+}
+
+.sidebar button.list{
+    border-radius: 4px 4px 0px 0px;
+}
+
+.sidebar button.grid{
+    border-radius: 0px;
+}
+
+.sidebar button.metro{
+    border-radius: 0px 0px 4px 4px;
+}
