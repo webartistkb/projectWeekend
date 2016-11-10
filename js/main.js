@@ -4,7 +4,9 @@
         var node = document.createElement('LI');
         node.classList.add('flex-item');
         var textnode = document.createTextNode('Item ' + i);
-        node.appendChild(textnode);
+        var span = document.createElement('span');
+        span.appendChild(textnode);
+        node.appendChild(span);
         document.getElementById('apps').appendChild(node);
     }   
 })();
