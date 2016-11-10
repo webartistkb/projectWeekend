@@ -7,7 +7,8 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
 </head>
 <body>
-<div id="main" class="container">
+
+<div id='main' onmousemove="openNav(event)" onmouseout="closeNav(event)" class="container">
     <nav id="sidenav" class="sidebar closed">
         <label>View:</label>
         <button class="list active">List</button>
@@ -15,7 +16,7 @@
         <button class="metro">Metro</button>
     </nav>
     
-    <ul id='apps' class='list flex-container'>
+    <ul id='apps' class='list flex-container' >
     </ul>
 </div>
 </body>
