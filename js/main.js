@@ -1,5 +1,5 @@
 // Boilerplate code to render 150 apps/items on page
-(function() {
+(function () {
     for (let i = 1; i <= 150; i++) {
         var node = document.createElement('LI');
         node.classList.add('flex-item');
@@ -13,20 +13,16 @@
 
 function openNav(e) {
 
-    if (e.pageX < 20) {
-        setTimeout(function() {
+    if (e.pageX < 10) {
+        setTimeout(function () {
             openSidebar();
         }, 2000);
 
+    } else if (e.pageX > 70) {
+        closeSidebar();
     }
 }
 
-function closeNav(e) {
-    if (e.pageX > 20) {
-        closeSidebar();
-        // Show the menu if mouse is within 20 pixels from the left or we are hovering over it
-    }
-}
 
 function hasClass(element, cls) {
     return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
@@ -44,12 +40,12 @@ function changeViews(action, sourceOfAction) {
     var _apps = document.getElementById('apps');
     if (hasClass(action, 'grid')) {
         _apps.classList.remove("list", "metro");
-        _apps.classList.add('grid');
+        _apps.classList.add('grid',"gradient-pattern");
     } else if (hasClass(action, 'list')) {
-        _apps.classList.remove("grid", "metro");
+        _apps.classList.remove("grid", "metro","gradient-pattern");
         _apps.classList.add('list');
     } else if (hasClass(action, 'metro')) {
-        _apps.classList.remove("grid", "list");
+        _apps.classList.remove("grid", "list","gradient-pattern");
         _apps.classList.add('metro');
     }
 }
@@ -58,7 +54,7 @@ function changeViews(action, sourceOfAction) {
 let sidebarActions = document.getElementsByTagName('button');
 console.log(typeof(sidebarActions), sidebarActions);
 for (var i = 0; i < sidebarActions.length; i++) {
-    sidebarActions[i].onclick = function(e) {
+    sidebarActions[i].onclick = function (e) {
         console.log(e);
         var action = e.target;
         changeViews(action);
@@ -83,7 +79,7 @@ function closeSidebar() {
     navBar.classList.remove('open');
 }
 
-document.addEventListener("keydown", function(event) {
+document.addEventListener("keydown", function (event) {
     event.preventDefault();
     console.log(event);
     // Fire following events only when sidenav is open

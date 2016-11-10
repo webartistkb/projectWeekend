@@ -128,6 +128,31 @@ body{
 
 /**************** CSS For SideBar Buttons **************/
 
+/*.gradient-pattern {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 320px;
+  height: 320px;
+  border: none;
+  font: normal 100%/normal Arial, Helvetica, sans-serif;
+  color: rgba(255,255,255,1);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: -webkit-linear-gradient(90deg, rgba(255,255,255,0.298039) 1px, rgba(0,0,0,0) 1px), -webkit-linear-gradient(0deg, rgba(255,255,255,0.298039) 1px, rgba(0,0,0,0) 1px), -webkit-linear-gradient(-90deg, rgba(40,40,40,1) 0, rgba(167,168,166,1) 100%);
+  background: -moz-linear-gradient(0deg, rgba(255,255,255,0.298039) 1px, rgba(0,0,0,0) 1px), -moz-linear-gradient(90deg, rgba(255,255,255,0.298039) 1px, rgba(0,0,0,0) 1px), -moz-linear-gradient(180deg, rgba(40,40,40,1) 0, rgba(167,168,166,1) 100%);
+  background: linear-gradient(0deg, rgba(255,255,255,0.298039) 1px, rgba(0,0,0,0) 1px), linear-gradient(90deg, rgba(255,255,255,0.298039) 1px, rgba(0,0,0,0) 1px), linear-gradient(180deg, rgba(40,40,40,1) 0, rgba(167,168,166,1) 100%);
+  background-position: -1px -1px, 157px -1px, 50% 50%;
+  -webkit-background-origin: padding-box;
+  background-origin: padding-box;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-size: 20px 20px, 100px 100px, auto auto;
+  background-size: 20px 20px, 100px 100px, auto auto;
+  -webkit-transform: rotateX(0.5729577951308232deg) rotateY(0.5729577951308232deg);
+  transform: rotateX(0.5729577951308232deg) rotateY(0.5729577951308232deg);
+}*/
+
 .sidebar button{
   text-decoration: none;
   background: #424242;
