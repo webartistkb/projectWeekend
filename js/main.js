@@ -3,6 +3,15 @@
     // Boilerplate code to render 150 apps/items on page
     for (var i = 1; i <= 150; i++) {
         var node = document.createElement('LI');
+        if(i < 37){
+            node.classList.add('opacity1')
+        }
+        else if(i < 73){
+            node.classList.add('opacity2')
+        } else{
+              node.classList.add('opacity3')
+        }
+        
         node.classList.add('flex-item');
         var textnode = document.createTextNode('Item ' + i);
         var span = document.createElement('span');
@@ -42,6 +51,8 @@ var navBar = document.getElementById('sidenav');
     // To Open Navbar using Mouse
     document.addEventListener('mouseover', function( e ) {
     if ((e.pageX < 20)&& (!isAltMode)) {
+function openNav(e) {
+    if (e.pageX < 10) {
         setTimeout(function () {
             openSidebar();
             isMouseMode = true;
