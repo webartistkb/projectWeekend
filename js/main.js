@@ -9,45 +9,26 @@
         node.appendChild(span);
         document.getElementById('apps').appendChild(node);
     }
-})();
-
-/*function openCloseNav(e) {
-    //
-
-    if ((e.pageX < 10)) {
-        setTimeout(function () {
-            openSidebar();
-        }, 1000);
-
-    } else if ((e.pageX > 70)){
-        closeSidebar();
-    }
-}*/
 
 var isAltMode = false;
 var isMouseMode = false;
 
 var navBar = document.getElementById("sidenav");
 
-document.addEventListener("mouseenter", function( e ) {
-    console.log('mouseenter');
-    if ((e.pageX < 10)&& (!isAltMode)) {
+document.addEventListener("mouseover", function( e ) {
+    if ((e.pageX < 20)&& (!isAltMode)) {
+        console.log('Inside mouse enter Condition');
         setTimeout(function () {
             openSidebar();
             isMouseMode = true;
         }, 1000);
     }
-});
-
-document.addEventListener("mouseover", function( e ) {
-    console.log('mouseover');
-    if ((e.pageX > 70)&&(!(isAltMode))){
+    else if((e.pageX > 72)&&(!(isAltMode))){
+        console.log('inside mouseout');
         closeSidebar();
         isMouseMode = false;
     }
 });
-
-
 
 function hasClass(element, cls) {
     return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
@@ -133,3 +114,6 @@ document.addEventListener("keydown", function (event) {
         isAltMode = true;
     }
 });
+
+})();
+
