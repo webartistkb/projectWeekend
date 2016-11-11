@@ -39,14 +39,14 @@ function changeViews(action, sourceOfAction) {
     action.classList.add('active');
     var _apps = document.getElementById('apps');
     if (hasClass(action, 'grid')) {
-        _apps.classList.remove("list", "metro");
+        _apps.classList.remove("list", "metro",'animationMetro');
         _apps.classList.add('grid',"gradient-pattern");
     } else if (hasClass(action, 'list')) {
-        _apps.classList.remove("grid", "metro","gradient-pattern");
+        _apps.classList.remove("grid", "metro","gradient-pattern",'animationMetro');
         _apps.classList.add('list');
     } else if (hasClass(action, 'metro')) {
         _apps.classList.remove("grid", "list","gradient-pattern");
-        _apps.classList.add('metro');
+        _apps.classList.add('metro','animationMetro');
     }
 }
 
