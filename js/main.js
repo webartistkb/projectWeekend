@@ -1,6 +1,7 @@
-// Boilerplate code to render 150 apps/items on page
 (function () {
-    for (  let i = 1; i <= 150; i++) {
+
+    // Boilerplate code to render 150 apps/items on page
+    for (var i = 1; i <= 150; i++) {
         var node = document.createElement('LI');
         node.classList.add('flex-item');
         var textnode = document.createTextNode('Item ' + i);
@@ -15,7 +16,31 @@ var isMouseMode = false;
 
 var navBar = document.getElementById("sidenav");
 
-document.addEventListener("mouseover", function( e ) {
+
+    /* Set the width of the side navigation to 80px */
+    function openSidebar(keyboard) {
+        if(keyboard){
+            navBar.classList.add('keyboard');
+        }
+        navBar.style.width = "80px";
+        navBar.classList.add('open');
+        navBar.classList.remove('closed');
+    }
+
+    /* Helper function to check id an element has a particular class */
+    function hasClass(element, cls) {
+        return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
+    }
+
+    /* Set the width of the side navigation to 0 */
+    function closeSidebar() {
+        navBar.style.width = "0";
+        navBar.classList.add('closed');
+        navBar.classList.remove('open','keyboard');
+    }
+
+    // To Open Navbar using Mouse
+    document.addEventListener("mouseover", function( e ) {
     if ((e.pageX < 20)&& (!isAltMode)) {
         console.log('Inside mouse enter Condition');
         setTimeout(function () {
@@ -30,17 +55,13 @@ document.addEventListener("mouseover", function( e ) {
     }
 });
 
-function hasClass(element, cls) {
-    return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
-}
-
 function changeViews(action, sourceOfAction) {
     console.log(action);
     if (sourceOfAction === 'keyboard') {
         action = document.querySelector('button.' + action);
         console.log(action);
     }
-    let active_button = document.querySelector('button.active');
+    var active_button = document.querySelector('button.active');
     active_button.classList.remove('active');
     action.classList.add('active');
     var _apps = document.getElementById('apps');
@@ -57,7 +78,7 @@ function changeViews(action, sourceOfAction) {
 }
 
 //TODO: fix event is getting attached to all buttons
-let sidebarActions = document.getElementsByTagName('button');
+var sidebarActions = document.getElementsByTagName('button');
 console.log(typeof(sidebarActions), sidebarActions);
 for (var i = 0; i < sidebarActions.length; i++) {
     sidebarActions[i].onclick = function (e) {
@@ -67,36 +88,13 @@ for (var i = 0; i < sidebarActions.length; i++) {
     }
 }
 
-/* Set the width of the side navigation to 150px */
-function openSidebar(keyboard) {
-    var navBar = document.getElementById("sidenav");
-    if(keyboard){
-        navBar.classList.add('keyboard');
-    }
-    console.log('open called');
-
-    navBar.style.width = "80px";
-    navBar.classList.add('open');
-    navBar.classList.remove('closed');
-}
-
-/* Set the width of the side navigation to 0 */
-function closeSidebar() {
-    console.log('close called');
-    let navBar = document.getElementById("sidenav");
-    navBar.style.width = "0";
-    navBar.classList.add('closed');
-    navBar.classList.remove('open','keyboard');
-}
-
+// Attaching Event Listener to open/close Navbar using Alt Key
 document.addEventListener("keydown", function (event) {
     if(isMouseMode){
         return;
     }
     event.preventDefault();
-    console.log(event);
     // Fire following events only when sidenav is open
-    var navBar = document.getElementById("sidenav");
     if (hasClass(navBar, 'open')) {
         if (event.keyCode === 16) {
             closeSidebar();

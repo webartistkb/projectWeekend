@@ -1,19 +1,15 @@
-/*** Common CSS ***/
 body,ul,li{
     margin: 0px;
     padding: 0px;
 }
-
 button{
     cursor: pointer;
 }
-
 li {
     transition: all 0.5s ease-out;
     border: 1px solid black;
     background: grey;
 }
-
 .metro li,.grid li{
     line-height: 100px;
     width: 100px;
@@ -21,36 +17,29 @@ li {
     text-align: center;
     border-radius: 4px;
 }
-
 #main ul {
     list-style: none;
 }
-
 #main ul.list{
     margin: 9px 9px 0px 9px;
 }
-
 #apps.metro.flex-container .flex-item span,#apps.grid.flex-container .flex-item span{
     margin-top: 44px;
     display: block;
     text-align: center;
 }
-
 #main ul.metro{
     height: 749px;
     column-width: 107px;
     column-gap: 0px;
     overflow-y: hidden;
 }
-
 #main ul.metro{
     margin: 5px 0px 0px 0px;
 }
-
 #main ul.grid{
     margin: 3px 0px 0px 4px;
 }
-
 #main .list li {
     width: 100%;
     height: 35px;
@@ -58,17 +47,14 @@ li {
     padding-left: 10px;
     line-height: 32px;
 }
-
 #main .grid li {
     float: left;
     margin: 3px;
 }
-
 #main .metro li{
     margin: 0px 0px 6px 6px;
 }
-
-/***** CSS for Side Bar *******/
+/****************** CSS for Side Bar ***************/
 .sidebar {
     height: 100%;
     width: 0;
@@ -82,31 +68,17 @@ li {
     padding-top: 20px;
     transition: width 0.25s ease-out;
 }
-
-/* The navigation menu links */
-.sidebar button {
-
-}
-
 .sidebar label{
     margin: 0px 20px 5px 20px;
     display: block;
     min-width: 60px;
 }
-
-/* When you mouse over the navigation buttons, change their color */
-.sidebar button:hover, .offcanvas a:focus{
-    color: #f1f1f1;
-}
-
 /* For smaller screens, where height is less than 450px */
 @media screen and (max-height: 450px) {
     .sidebar {padding-top: 15px;}
     .sidebar a {font-size: 18px;}
 }
-
-/**************** CSS For SideBar Buttons **************/
-
+/*** SideBar Buttons ****/
 .sidebar button{
     padding: 8px;
     font-size: 11px;
@@ -129,25 +101,20 @@ li {
     background-image: -webkit-linear-gradient(top, #0665b8, #47b8ff);
     background-image: linear-gradient(to bottom, #0665b8, #47b8ff);
 }
-
 .sidebar button:hover {
     background: #3cb0fd;
     background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
     background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
 }
-
 .sidebar button.list{
     border-radius: 4px 4px 0px 0px;
 }
-
 .sidebar button.grid{
     border-radius: 0px;
 }
-
 .sidebar button.metro{
     border-radius: 0px 0px 4px 4px;
 }
-
 *:focus { /*** <--- Bad for Accessibility ****/
     outline: none;
 }
