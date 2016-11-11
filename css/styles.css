@@ -1,21 +1,121 @@
-#main ul { list-style: none; }
+#main ul { list-style: none;transition: all 1s ease-in-out }
 #main .buttons { margin-bottom: 20px; }
 
 body{
     margin: 0px;
     padding: 0px;
+    -webkit-transition: width 2s, height 2s, background-color 2s, -webkit-transform 2s;
 }
-#apps.list li { width: 100%; border-bottom: 1px dotted #CCC; margin-bottom: 10px; padding-bottom: 10px;transition: all 0.5s ease-out; }
+#apps.list li {
+    background-color: grey;
+    width: 100%;
+    border: 1px solid #CCC;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    transition: all 1s ease-in-out;
+}
 
 #apps.list.flex-container{
     padding: 0px;
     margin: 9px 0px 0px 9px;
+    transition: all 1s ease-in-out;
+}
+
+/* The animation code */
+@keyframes listToMetroAnimation {
+    from {width: 100%; border-bottom: 1px dotted #CCC; margin-bottom: 10px; padding: 5px 5px 5px 20px;}
+    to { background: pink;
+        margin: 5px;
+        width: 100px;
+        height: 100px;
+        font-weight: bold;
+        font-size: 0.6em;
+        text-align: center;
+        flex-flow: row;
+        border-radius: 4px;
+    }
+}
+
+/* The animation code */
+@keyframes metroToListAnimation {
+    from {background: pink;
+        margin: 5px;
+        width: 100px;
+        height: 100px;
+        font-weight: bold;
+        font-size: 0.6em;
+        text-align: center;
+        flex-flow: row;
+        border-radius: 4px;
+       }
+    to {
+        width: 100%; border-bottom: 1px dotted #CCC; margin-bottom: 10px; padding: 5px 5px 5px 20px;
+    }
+}
+
+/* The animation code */
+@keyframes gridToMetroAnimation {
+    from {width: 100%; border-bottom: 1px dotted #CCC; margin-bottom: 10px; padding: 5px 5px 5px 20px;}
+    to { background: pink;
+        margin: 5px;
+        width: 100px;
+        height: 100px;
+        font-weight: bold;
+        font-size: 0.6em;
+        text-align: center;
+        flex-flow: row;
+        border-radius: 4px;
+    }
+}
+
+/* The animation code */
+@keyframes metroToGridAnimation {
+    from {background: pink;
+        margin: 5px;
+        width: 100px;
+        height: 100px;
+        font-weight: bold;
+        font-size: 0.6em;
+        text-align: center;
+        flex-flow: row;
+        border-radius: 4px;
+    }
+    to {   background: tomato;
+        margin: 5px;
+        width: 100px;
+        height: 100px;
+        font-weight: bold;
+        font-size: 0.6em;
+        text-align: center;
+        border-radius: 4px;
+    }
+}
+
+/* The animation code */
+@keyframes listToGridAnimation {
+    from {width: 100%; border-bottom: 1px dotted #CCC; margin-bottom: 10px; padding: 5px 5px 5px 20px;}
+    to { background: pink;
+        margin: 5px;
+        width: 100px;
+        height: 100px;
+        font-weight: bold;
+        font-size: 0.6em;
+        text-align: center;
+        flex-flow: row;
+        border-radius: 4px;
+    }
+}
+
+
+.flex-item, .flex-container, ul, li{
+    transition: all 1s ease-in-out;
 }
 
 #apps.list.flex-container .flex-item{
-    background: tomato;
+    background: hotpink;
     padding: 5px 5px 5px 20px;
-    transition: all 0.5s ease-out;
+    -webkit-animation: metroToListAnimation 0.5s ease-out; /* Safari 4.0 - 8.0 */
+    animation: metroToListAnimation 0.5s ease-out;
 }
 
 #main{
@@ -25,6 +125,7 @@ body{
 #apps.metro.flex-container .flex-item span,#apps.grid.flex-container .flex-item span{
     margin-top: 44px;
     display: block;
+    transition: all 1s ease-in-out;
 }
 
 
@@ -36,10 +137,13 @@ body{
     padding: 0;
     margin: 4px 0px 0px 4px;
     overflow-y:hidden;
+    transition: all 1s ease-in-out;
 }
 
+
+
 #apps.metro.flex-container .flex-item{
-     background: tomato;
+     background: pink;
     margin: 5px;
     width: 100px;
     height: 100px;
@@ -48,7 +152,9 @@ body{
     text-align: center;
     flex-flow: row;
     border-radius: 4px;
-    transition: all 0.5s ease-out;
+   /* -webkit-transition: width 2s, height 2s, background-color 2s, -webkit-transform 2s;*/
+    -webkit-animation: listToMetroAnimation 0.5s ease-out; /* Safari 4.0 - 8.0 */
+    animation: listToMetroAnimation 0.5s ease-out;
 }
 
 #apps.grid.flex-container {
@@ -62,6 +168,7 @@ body{
     display: flex;
     -webkit-flex-flow: row wrap;
     justify-content: flex-start;
+    transition: all 1s ease-in-out;
 }
 
 #apps.grid.flex-container .flex-item {
@@ -73,7 +180,9 @@ body{
     font-size: 0.6em;
     text-align: center;
     border-radius: 4px;
-    transition: all 0.5s ease-out;
+
+    -webkit-animation: metroToGridAnimation 2s ease-out; /* Safari 4.0 - 8.0 */
+    animation: metroToGridAnimation 2s ease-out;
 }
 
 /***** CSS for Side bar *******/
