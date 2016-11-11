@@ -1,305 +1,116 @@
-#main ul { list-style: none;transition: all 1s ease-in-out }
-#main .buttons { margin-bottom: 20px; }
-
-body{
+body,ul,li{
     margin: 0px;
     padding: 0px;
-    -webkit-transition: width 2s, height 2s, background-color 2s, -webkit-transform 2s;
 }
-#apps.list li {
-    background-color: grey;
-    width: 100%;
-    border: 1px solid #CCC;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    transition: all 1s ease-in-out;
+button{
+    cursor: pointer;
 }
-
-#apps.list.flex-container{
-    padding: 0px;
-    margin: 9px 0px 0px 9px;
-    transition: all 1s ease-in-out;
+li {
+    transition: all 0.5s ease-out;
+    border: 1px solid black;
+    background: grey;
 }
-
-/* The animation code */
-@keyframes listToMetroAnimation {
-    from {width: 100%; border-bottom: 1px dotted #CCC; margin-bottom: 10px; padding: 5px 5px 5px 20px;}
-    to { background: pink;
-        margin: 5px;
-        width: 100px;
-        height: 100px;
-        font-weight: bold;
-        font-size: 0.6em;
-        text-align: center;
-        flex-flow: row;
-        border-radius: 4px;
-    }
-}
-
-/* The animation code */
-@keyframes metroToListAnimation {
-    from {background: pink;
-        margin: 5px;
-        width: 100px;
-        height: 100px;
-        font-weight: bold;
-        font-size: 0.6em;
-        text-align: center;
-        flex-flow: row;
-        border-radius: 4px;
-       }
-    to {
-        width: 100%; border-bottom: 1px dotted #CCC; margin-bottom: 10px; padding: 5px 5px 5px 20px;
-    }
-}
-
-/* The animation code */
-@keyframes gridToMetroAnimation {
-    from {width: 100%; border-bottom: 1px dotted #CCC; margin-bottom: 10px; padding: 5px 5px 5px 20px;}
-    to { background: pink;
-        margin: 5px;
-        width: 100px;
-        height: 100px;
-        font-weight: bold;
-        font-size: 0.6em;
-        text-align: center;
-        flex-flow: row;
-        border-radius: 4px;
-    }
-}
-
-/* The animation code */
-@keyframes metroToGridAnimation {
-    from {background: pink;
-        margin: 5px;
-        width: 100px;
-        height: 100px;
-        font-weight: bold;
-        font-size: 0.6em;
-        text-align: center;
-        flex-flow: row;
-        border-radius: 4px;
-    }
-    to {   background: tomato;
-        margin: 5px;
-        width: 100px;
-        height: 100px;
-        font-weight: bold;
-        font-size: 0.6em;
-        text-align: center;
-        border-radius: 4px;
-    }
-}
-
-/* The animation code */
-@keyframes listToGridAnimation {
-    from {width: 100%; border-bottom: 1px dotted #CCC; margin-bottom: 10px; padding: 5px 5px 5px 20px;}
-    to { background: pink;
-        margin: 5px;
-        width: 100px;
-        height: 100px;
-        font-weight: bold;
-        font-size: 0.6em;
-        text-align: center;
-        flex-flow: row;
-        border-radius: 4px;
-    }
-}
-
-
-.flex-item, .flex-container, ul, li{
-    transition: all 1s ease-in-out;
-}
-
-#apps.list.flex-container .flex-item{
-    background: hotpink;
-    padding: 5px 5px 5px 20px;
-    -webkit-animation: metroToListAnimation 0.5s ease-out; /* Safari 4.0 - 8.0 */
-    animation: metroToListAnimation 0.5s ease-out;
-}
-
-#main{
-    padding: 0px;
-}
-
-#apps.metro.flex-container .flex-item span,#apps.grid.flex-container .flex-item span{
-    margin-top: 44px;
-    display: block;
-    transition: all 1s ease-in-out;
-}
-
-
-#apps.metro.flex-container{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    height: 700px;
-    padding: 0;
-    margin: 4px 0px 0px 4px;
-    overflow-y:hidden;
-    transition: all 1s ease-in-out;
-}
-
-
-
-#apps.metro.flex-container .flex-item{
-     background: pink;
-    margin: 5px;
+.metro li,.grid li{
+    line-height: 100px;
     width: 100px;
     height: 100px;
-    font-weight: bold;
-    font-size: 0.6em;
     text-align: center;
-    flex-flow: row;
     border-radius: 4px;
-   /* -webkit-transition: width 2s, height 2s, background-color 2s, -webkit-transform 2s;*/
-    -webkit-animation: listToMetroAnimation 0.5s ease-out; /* Safari 4.0 - 8.0 */
-    animation: listToMetroAnimation 0.5s ease-out;
 }
-
-#apps.grid.flex-container {
-    padding: 0;
-    margin: 4px 0px 0px 4px;
+#main ul {
     list-style: none;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-flow: row wrap;
-    justify-content: flex-start;
-    transition: all 1s ease-in-out;
+}
+#main ul.list{
+    margin: 9px 9px 0px 9px;
 }
 
-#apps.grid.flex-container .flex-item {
-    background: tomato;
-    margin: 5px;
-    width: 100px;
-    height: 100px;
-    font-weight: bold;
-    font-size: 0.6em;
-    text-align: center;
-    border-radius: 4px;
-
-    -webkit-animation: metroToGridAnimation 2s ease-out; /* Safari 4.0 - 8.0 */
-    animation: metroToGridAnimation 2s ease-out;
+#main ul.metro{
+    height: 749px;
+    column-width: 107px;
+    column-gap: 0px;
+    overflow-y: hidden;
 }
-
-/***** CSS for Side bar *******/
-/* The side navigation menu */
+#main ul.metro{
+    margin: 5px 0px 0px 0px;
+}
+#main ul.grid{
+    margin: 3px 0px 0px 4px;
+}
+#main .list li {
+    width: 100%;
+    height: 35px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    line-height: 32px;
+}
+#main .grid li {
+    float: left;
+    margin: 3px;
+}
+#main .metro li{
+    margin: 0px 0px 6px 6px;
+}
+/****************** CSS for Side Bar ***************/
 .sidebar {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
     top: 0;
     left: 0;
     color: white;
-    background-color: #111; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
+    background-color: #111;
+    overflow-x: hidden;
     padding-top: 20px;
-    transition: width 0.25s ease-out; /* 0.25 second transition effect to slide in the sidenav */
-}
-
-/* The navigation menu links */
-.sidebar button {
-    padding: 8px;
-    font-size: 11px;
-    background-color: grey;
-    display: block;
-    transition: 0.3s;
-    margin-bottom: 10px;
-    border-radius: 2px;
-    min-width: 55px;
-    margin: 0 auto;
+    transition: width 0.25s ease-out;
 }
 .sidebar label{
     margin: 0px 20px 5px 20px;
     display: block;
     min-width: 60px;
 }
-
-/* When you mouse over the navigation links, change their color */
-.sidebar button:hover, .offcanvas a:focus{
-    color: #f1f1f1;
-}
-
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-    transition: margin-left .5s;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+/* For smaller screens, where height is less than 450px */
 @media screen and (max-height: 450px) {
     .sidebar {padding-top: 15px;}
     .sidebar a {font-size: 18px;}
 }
-
-/**************** CSS For SideBar Buttons **************/
-
-/*.gradient-pattern {
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  width: 320px;
-  height: 320px;
-  border: none;
-  font: normal 100%/normal Arial, Helvetica, sans-serif;
-  color: rgba(255,255,255,1);
-  -o-text-overflow: clip;
-  text-overflow: clip;
-  background: -webkit-linear-gradient(90deg, rgba(255,255,255,0.298039) 1px, rgba(0,0,0,0) 1px), -webkit-linear-gradient(0deg, rgba(255,255,255,0.298039) 1px, rgba(0,0,0,0) 1px), -webkit-linear-gradient(-90deg, rgba(40,40,40,1) 0, rgba(167,168,166,1) 100%);
-  background: -moz-linear-gradient(0deg, rgba(255,255,255,0.298039) 1px, rgba(0,0,0,0) 1px), -moz-linear-gradient(90deg, rgba(255,255,255,0.298039) 1px, rgba(0,0,0,0) 1px), -moz-linear-gradient(180deg, rgba(40,40,40,1) 0, rgba(167,168,166,1) 100%);
-  background: linear-gradient(0deg, rgba(255,255,255,0.298039) 1px, rgba(0,0,0,0) 1px), linear-gradient(90deg, rgba(255,255,255,0.298039) 1px, rgba(0,0,0,0) 1px), linear-gradient(180deg, rgba(40,40,40,1) 0, rgba(167,168,166,1) 100%);
-  background-position: -1px -1px, 157px -1px, 50% 50%;
-  -webkit-background-origin: padding-box;
-  background-origin: padding-box;
-  -webkit-background-clip: border-box;
-  background-clip: border-box;
-  -webkit-background-size: 20px 20px, 100px 100px, auto auto;
-  background-size: 20px 20px, 100px 100px, auto auto;
-  -webkit-transform: rotateX(0.5729577951308232deg) rotateY(0.5729577951308232deg);
-  transform: rotateX(0.5729577951308232deg) rotateY(0.5729577951308232deg);
-}*/
-
+/*** SideBar Buttons ****/
 .sidebar button{
-  text-decoration: none;
-  background: #424242;
-  background-image: -webkit-linear-gradient(top, #424242, #919191);
-  background-image: -moz-linear-gradient(top, #424242, #919191);
-  background-image: -ms-linear-gradient(top, #424242, #919191);
-  background-image: -o-linear-gradient(top, #424242, #919191);
-  background-image: linear-gradient(to bottom, #424242, #919191);
-  color: #fff;
-  margin-bottom: 3px;
-  border: 0px;
+    padding: 8px;
+    font-size: 11px;
+    background-color: grey;
+    display: block;
+    border-radius: 2px;
+    min-width: 55px;
+    min-height: 30px;
+    margin: 0 auto;
+    text-decoration: none;
+    background: #424242;
+    background-image: -webkit-linear-gradient(top, #424242, #919191);
+    background-image: linear-gradient(to bottom, #424242, #919191);
+    color: #fff;
+    margin-bottom: 3px;
+    border: 0px;
 }
 .sidebar button.active {
-  background: #0665b8;
-  background-image: -webkit-linear-gradient(top, #0665b8, #47b8ff);
-  background-image: -moz-linear-gradient(top, #0665b8, #47b8ff);
-  background-image: -ms-linear-gradient(top, #0665b8, #47b8ff);
-  background-image: -o-linear-gradient(top, #0665b8, #47b8ff);
-  background-image: linear-gradient(to bottom, #0665b8, #47b8ff);
+    background: #0665b8;
+    background-image: -webkit-linear-gradient(top, #0665b8, #47b8ff);
+    background-image: linear-gradient(to bottom, #0665b8, #47b8ff);
 }
-
 .sidebar button:hover {
-  background: #3cb0fd;
-  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    background: #3cb0fd;
+    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
 }
-
 .sidebar button.list{
     border-radius: 4px 4px 0px 0px;
 }
-
 .sidebar button.grid{
     border-radius: 0px;
 }
-
 .sidebar button.metro{
     border-radius: 0px 0px 4px 4px;
+}
+*:focus { /*** <--- Bad for Accessibility ****/
+    outline: none;
 }

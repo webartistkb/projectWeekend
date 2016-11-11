@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/png" href="images/favicon.ico"/>
-    <title>Will change later - Plz Don't push the title here!</title>
-    <link rel="stylesheet" type="text/css" href="css/new_styles.css"/>
+    <meta charset='UTF-8'>
+    <link rel='icon' type='image/png' href='images/favicon.png'/>
+    <title>Title</title>
+    <link rel='stylesheet' type='text/css' href='css/styles.css'/>
 </head>
 <body>
 
-<div id='main' class="container">
-    <nav id="sidenav" class="sidebar closed">
+<div id='main' class='container'>
+    <nav id='sidenav' class='sidebar closed'>
         <label>View:</label>
-        <button class="list active">List</button>
-        <button class="grid">Grid</button>
-        <button class="metro">Metro</button>
+        <button class='list active' onclick='changeViews(event.target)'>List</button>
+        <button class='grid' onclick='changeViews(event.target)'>Grid</button>
+        <button class='metro' onclick='changeViews(event.target)'>Metro</button>
     </nav>
 
-    <ul id="apps" class="list">
+    <ul id='apps' class='list'>
     </ul>
 </div>
 </body>
