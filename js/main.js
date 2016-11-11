@@ -1,6 +1,6 @@
 // Boilerplate code to render 150 apps/items on page
 (function () {
-    for (let i = 1; i <= 150; i++) {
+    for (  let i = 1; i <= 150; i++) {
         var node = document.createElement('LI');
         node.classList.add('flex-item');
         var textnode = document.createTextNode('Item ' + i);
@@ -11,17 +11,42 @@
     }
 })();
 
-function openNav(e) {
+/*function openCloseNav(e) {
+    //
 
-    if (e.pageX < 10) {
+    if ((e.pageX < 10)) {
         setTimeout(function () {
             openSidebar();
-        }, 2000);
+        }, 1000);
 
-    } else if (e.pageX > 70) {
+    } else if ((e.pageX > 70)){
         closeSidebar();
     }
-}
+}*/
+
+var isAltMode = false;
+var isMouseMode = false;
+
+var navBar = document.getElementById("sidenav");
+
+document.addEventListener("mouseenter", function( e ) {
+    console.log('mouseenter');
+    if ((e.pageX < 10)&& (!isAltMode)) {
+        setTimeout(function () {
+            openSidebar();
+            isMouseMode = true;
+        }, 1000);
+    }
+});
+
+document.addEventListener("mouseover", function( e ) {
+    console.log('mouseover');
+    if ((e.pageX > 70)&&(!(isAltMode))){
+        closeSidebar();
+        isMouseMode = false;
+    }
+});
+
 
 
 function hasClass(element, cls) {
@@ -62,9 +87,13 @@ for (var i = 0; i < sidebarActions.length; i++) {
 }
 
 /* Set the width of the side navigation to 150px */
-function openSidebar() {
+function openSidebar(keyboard) {
+    var navBar = document.getElementById("sidenav");
+    if(keyboard){
+        navBar.classList.add('keyboard');
+    }
     console.log('open called');
-    let navBar = document.getElementById("sidenav");
+
     navBar.style.width = "80px";
     navBar.classList.add('open');
     navBar.classList.remove('closed');
@@ -76,17 +105,22 @@ function closeSidebar() {
     let navBar = document.getElementById("sidenav");
     navBar.style.width = "0";
     navBar.classList.add('closed');
-    navBar.classList.remove('open');
+    navBar.classList.remove('open','keyboard');
 }
 
 document.addEventListener("keydown", function (event) {
+    if(isMouseMode){
+        return;
+    }
     event.preventDefault();
     console.log(event);
     // Fire following events only when sidenav is open
-    let navBar = document.getElementById("sidenav");
+    var navBar = document.getElementById("sidenav");
     if (hasClass(navBar, 'open')) {
-        if (event.keyCode === 16)
+        if (event.keyCode === 16) {
             closeSidebar();
+            isAltMode = false;
+        }
         else if (event.keyCode === 71) {
             changeViews('grid', 'keyboard');
         } else if (event.keyCode === 76) {
@@ -95,6 +129,7 @@ document.addEventListener("keydown", function (event) {
             changeViews('metro', 'keyboard');
         }
     } else if (event.keyCode === 16 && hasClass(navBar, 'closed')) {
-        openSidebar();
+        openSidebar('keyboard');
+        isAltMode = true;
     }
 });
